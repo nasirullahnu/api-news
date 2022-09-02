@@ -1,0 +1,14 @@
+.catagories{
+    display: inline-block;
+    margin-left: 30px;
+}
+.catagories p{
+    margin-left: 25px;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.catagories p:hover{
+    background-color: burlywood;
+}
