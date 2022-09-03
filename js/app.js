@@ -27,7 +27,14 @@ const loadNews = (newsId) => {
     .then(data => loadNewsCards(data.data))
 }
 const loadNewsCards = (allNews) => {
-  // console.log(allNews)
+  // console.log(allNews.length)
+  // items found 
+  const itemsFound = allNews.length
+  const itemsFoundSection = document.getElementById('items-found')
+  itemsFoundSection.innerHTML = `
+  <h3 class="container bg-light p-4 text-center">${itemsFound} news found on this catagory</h3>
+  `
+  // news added to the card 
   const newsContainer = document.getElementById('news-container');
   newsContainer.innerHTML = '';
   allNews.forEach(news => {
