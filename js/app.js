@@ -13,14 +13,25 @@ const displayCatagories = (catagories) => {
         const catagoriDiv = document.createElement('div')
         catagoriDiv.classList.add('catagories')
         catagoriDiv.innerHTML = `
-            <p class='catagories'>${catagori.category_name}</p>
+            <p onclick="loadNews(${catagori.category_id})">${catagori.category_name}</p>
         `
-        catagoriesContainer.appendChild(catagoriDiv);
-        
+        catagoriesContainer.appendChild(catagoriDiv);  
     })
 }
-const hello = () => {
-    console.log('clicked')
+
+const loadNews = (newsId) => {
+    // console.log(newsId)
+    url = `https://openapi.programming-hero.com/api/news/category/0${newsId}`
+    fetch(url)
+    .then(res => res.json())
+    .then(data => loadNewsCards(data.data))
+}
+const loadNewsCards = (allNews) => {
+    // console.log(allNews)
+    allNews.forEach(news => {
+        console.log(news)
+    })
+
 }
 
 newsCatagories();
