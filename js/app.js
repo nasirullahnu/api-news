@@ -28,8 +28,37 @@ const loadNews = (newsId) => {
 }
 const loadNewsCards = (allNews) => {
     // console.log(allNews)
+    const newsContainer = document.getElementById('news-container');
+    newsContainer.innerHTML = '';
     allNews.forEach(news => {
         console.log(news)
+        const newsCard = document.createElement('div');
+        newsCard.innerHTML = `
+        <div class="row g-2">
+              <div class="col-md-4 mt-2">
+                <img src="${news.image_url}" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">${news.title}</h5>
+                  <p class="card-text">${news.details.slice(0, 200)}...</p>
+                  <div class="row g-2">
+                    <div class="col d-flex">
+                    <img src="${news.author.img}" class="img-fluid rounded-start" style="width:50px;height:50px;margin:5px;" alt="...">
+                      <div>
+                        <strong>${news.author.name ? news.author.name : 'No Author Name Found'}</strong>
+                        <p>${news.author.published_date}</p>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <strong>views<br> ${news.total_view}</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        `
+        newsContainer.appendChild(newsCard);
     })
 
 }
