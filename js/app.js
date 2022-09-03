@@ -31,7 +31,7 @@ const loadNewsCards = (allNews) => {
   const newsContainer = document.getElementById('news-container');
   newsContainer.innerHTML = '';
   allNews.forEach(news => {
-    console.log(news)
+    // console.log(news)
     const newsCard = document.createElement('div');
     newsCard.innerHTML = `
         <div class="row g-2 m-2 bg-light">
@@ -65,8 +65,25 @@ const loadNewsCards = (allNews) => {
   })
 }
 
+// modal detail 
 const loadNewsDetail = (ids) => {
-  console.log(ids)
+  // console.log(ids)
+  const url = `https://openapi.programming-hero.com/api/news/${ids}`
+  fetch(url)
+  .then(res => res.json())
+  .then(data => modalData(data.data[0]))
+}
+
+const modalData = (newsData) => {
+  // console.log(newsData)
+  const modalInfo = document.getElementById('modal-info')
+  modalInfo.innerHTML = `
+  <p>Reporter : <strong>${newsData.author.name}</strong></p>
+  <p>Rating : <strong>${newsData.rating.number}</strong></p>
+  <p>Is Trending : <strong>${newsData.others_info.is_trending}</strong></p>
+  <p>Badge : <strong>${newsData.rating.badge}</strong></p>
+  <p>Total Views : <strong>${newsData.total_view}</strong></p>
+  `
 }
 
 
