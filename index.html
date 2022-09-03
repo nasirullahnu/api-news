@@ -13,6 +13,7 @@
   <!-- font awesome  -->
   <script src="https://kit.fontawesome.com/499a9e8bc7.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
   <main>
     <header>
@@ -32,7 +33,7 @@
                 <a class="nav-link active" aria-current="page" href="#">News</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
+                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Blog</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Current</a>
@@ -46,7 +47,73 @@
         </div>
       </nav>
       <hr>
+      <!-- blog informations modal  -->
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body overflows">
+              <strong class="blog-info">1. what are the difference between var let and const in es6.</strong>
+              <p><strong>var</strong> is now the weakest signal available when you define a variable in JavaScript. The
+                variable may or may not be reassigned, and the variable may or may not be used for an entire function,
+                or just for the purpose of a block or loop.</p>
+              <p><strong>let</strong> is a signal that the variable may be reassigned, such as a counter in a loop, or a
+                value swap in an algorithm. It also signals that the variable will be used only in the block it’s
+                defined in, which is not always the entire containing function.</p>
+              <p><strong>const</strong> is a signal that the identifier won't be reassigned.</p>
+
+              <strong class="blog-info">2. why we use templet string in js.</strong>
+              <p><strong>Template strings</strong> are a powerful feature of modern JavaScript released in ES6. It lets
+                us insert/interpolate variables and expressions into strings without needing to concatenate like in
+                older versions of JavaScript. It allows us to create strings that are complex and contain dynamic
+                elements.</p>
+
+              <strong class="blog-info">3. Difference Between Arrow Function and Regular Function</strong>
+              <p> <strong>3.1 Syntax:</strong>
+                A programmer can get the same result as regular functions by writing a few lines of code using arrow
+                functions.
+                Curly brackets are not required if only one expression is present.</p>
+              <p><strong>3.2 Arguments binding: </strong>arguments object inside the regular functions contains the list
+                of arguments.
+                The arrow function, on the opposite, doesn't define arguments i.e. they do not have arguments binding.
+                But you can easily access the arrow function arguments using a rest parameter</p>
+              <p><strong>3.3 Use of this keyword: </strong>Inside of a regular JavaScript function, this value is
+                dynamic. The dynamic context means that the value of this depends on how the function is invoked.
+                The behavior of this inside of an arrow, function differs considerably from the regular function's this
+                behavior as an arrow function does not have its own “this” keyword.
+
+                The value of this inside an arrow function remains the same throughout the lifecycle of the function and
+                is always bound to the value of this in the closest non-arrow parent function which means No matter how
+                or where being executed, this value inside of an arrow function always equals this value from the outer
+                function.</p>
+              <p><strong>3.4 Using a new keyword: </strong>Regular functions are constructible and callable. They can be
+                called using the new keyword.
+                But, the arrow functions are only callable and not constructible, i.e., arrow functions can never be
+                used as constructor functions.</p>
+
+              <strong class="blog-info">4. uses of Map, forEach , filter and fin</strong>
+              <p><strong>for each : </strong>.forEach() is great you need to execute a function for each individual
+                element in an array. Good practice is that you should use .forEach() when you can’t use other array
+                methods to accomplish your goal. I know this may sound vague, but .forEach() is a generic tool… only use
+                it when you can’t use a more specialized tool.</p>
+              <p><strong>Map : </strong>.map() when you want to transform elements in an array.</p>
+              <p><strong>filter : </strong>.filter() when you want to select a subset of multiple elements from an
+                array.</p>
+              <p><strong>find : </strong>.find() When you want to select a single element from an array.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
+
+
     <!-- news catagories section  -->
     <section>
       <div id="news-catagoried" class="container"></div>
@@ -55,6 +122,15 @@
     <section class="container">
       <div class="row">
         <div id="news-container" class="card mb-3 col-lg-6 mx-3 w-100">
+        </div>
+      </div>
+    </section>
+
+    <!-- loading spinner  -->
+    <section>
+      <div class="text-center mt-5">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
         </div>
       </div>
     </section>
@@ -70,7 +146,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div id="modal-info" class="modal-body">
-              
+
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

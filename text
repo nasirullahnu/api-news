@@ -1,0 +1,53 @@
+1. what are the difference between var let and const in es6
+
+`const` is a signal that the identifier won't be reassigned. `let` is a signal that the variable may be reassigned, 
+such as a counter in a loop, or a value swap in an algorithm. It also signals that the variable will be used only in the block 
+it's defined in, which is not always the entire containing function.
+
+`const` is a signal that the identifier won’t be reassigned.
+
+`let` is a signal that the variable may be reassigned, such as a counter in a loop, or a value swap in an algorithm. It also signals that the variable will be used only in the block it’s defined in, which is not always the entire containing function.
+
+`var` is now the weakest signal available when you define a variable in JavaScript. The variable may or may not be reassigned, and the variable may or may not be used for an entire function, or just for the purpose of a block or loop.
+
+
+
+2. why we use templet string in js.
+
+Template strings are a powerful feature of modern JavaScript released in ES6. It lets us insert/interpolate variables and expressions into strings without needing to concatenate like in older versions of JavaScript. It allows us to create strings that are complex and contain dynamic elements.
+
+
+
+3. Difference Between Arrow Function and Regular Function
+
+3.1) Syntax:
+A programmer can get the same result as regular functions by writing a few lines of code using arrow functions.
+Curly brackets are not required if only one expression is present.
+
+3.2) Arguments binding
+arguments object inside the regular functions contains the list of arguments.
+The arrow function, on the opposite, doesn’t define arguments i.e. they do not have arguments binding.
+But you can easily access the arrow function arguments using a rest parameter
+
+3.3) Use of this keyword
+Inside of a regular JavaScript function, this value is dynamic. The dynamic context means that the value of this depends on how the function is invoked.
+The behavior of this inside of an arrow, function differs considerably from the regular function’s this behavior as an arrow function does not have its own “this” keyword.
+
+The value of this inside an arrow function remains the same throughout the lifecycle of the function and is always bound to the value of this in the closest non-arrow parent function which means No matter how or where being executed, this value inside of an arrow function always equals this value from the outer function.
+
+3.4) Using a new keyword
+Regular functions are constructible and callable. They can be called using the new keyword.
+But, the arrow functions are only callable and not constructible, i.e., arrow functions can never be used as constructor functions.
+
+
+4. uses of Map, forEach , filter and find
+for each - .forEach() is great you need to execute a function for each individual element in an array. Good practice is that you should use .forEach() when you can’t use other array methods to accomplish your goal. I know this may sound vague, but .forEach() is a generic tool… only use it when you can’t use a more specialized tool.
+
+Map - .map() when you want to transform elements in an array.
+filter - .filter() when you want to select a subset of multiple elements from an array.
+find - .find() When you want to select a single element from an array.
+
+
+
+
+

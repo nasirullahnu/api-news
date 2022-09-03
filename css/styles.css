@@ -1,3 +1,6 @@
+main{
+    overflow: hidden;
+}
 .catagories{
     display: inline-block;
     margin-left: 30px;
@@ -11,4 +14,13 @@
 }
 .catagories p:hover{
     background-color: burlywood;
+}
+.blog-info{
+    background-color: yellow;
+    padding: 3px;
+}
+.overflows{
+    max-height: 300px;
+    overflow: scroll;
+    overflow-x: hidden;
 }
