@@ -3,6 +3,7 @@ const newsCatagories = () => {
   fetch(url)
     .then(res => res.json())
     .then(data => displayCatagories(data.data.news_category))
+    .catch(error => console.log(error))
 }
 
 const displayCatagories = (catagories) => {
@@ -26,6 +27,7 @@ const loadNews = (newsId) => {
   fetch(url)
     .then(res => res.json())
     .then(data => loadNewsCards(data.data))
+    .catch(error => console.log(error))
 }
 const loadNewsCards = (allNews) => {
   // console.log(allNews.length)
@@ -81,17 +83,18 @@ const loadNewsDetail = (ids) => {
   fetch(url)
   .then(res => res.json())
   .then(data => modalData(data.data[0]))
+  .catch(error => console.log(error))
 }
 
 const modalData = (newsData) => {
   // console.log(newsData)
   const modalInfo = document.getElementById('modal-info')
   modalInfo.innerHTML = `
-  <p>Reporter : <strong>${newsData.author.name}</strong></p>
+  <p>Reporter : <strong>${newsData.author.name ? newsData.author.name : 'no name found'}</strong></p>
   <p>Rating : <strong>${newsData.rating.number}</strong></p>
   <p>Is Trending : <strong>${newsData.others_info.is_trending}</strong></p>
   <p>Badge : <strong>${newsData.rating.badge}</strong></p>
-  <p>Total Views : <strong>${newsData.total_view}</strong></p>
+  <p>Total Views : <strong>${newsData.total_view ? newsData.total_view : 'no views'}</strong></p>
   `
 }
 
