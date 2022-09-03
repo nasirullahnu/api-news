@@ -53,7 +53,9 @@ const loadNewsCards = (allNews) => {
                     <div class="col-lg-4">
                       <strong>views<br> ${news.total_view ? news.total_view : 'no views yet'}</strong>
                     </div>
-                    <div class="col-lg-4"><button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#newsdetails">Details</button></div>
+                    <div class="col-lg-4">
+                      <button onclick="loadNewsDetail('${news._id}')" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#newsdetails">Details</button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -61,7 +63,11 @@ const loadNewsCards = (allNews) => {
         `
     newsContainer.appendChild(newsCard);
   })
-
 }
+
+const loadNewsDetail = (ids) => {
+  console.log(ids)
+}
+
 
 newsCatagories();
