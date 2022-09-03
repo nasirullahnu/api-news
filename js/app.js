@@ -10,7 +10,7 @@ const displayCatagories = (catagories) => {
   // console.log(catagories)
   const catagoriesContainer = document.getElementById('news-catagoried');
   catagories.forEach(catagori => {
-    console.log(catagori)
+    // console.log(catagori)
     const catagoriDiv = document.createElement('div')
     catagoriDiv.classList.add('catagories')
     catagoriDiv.innerHTML = `
@@ -30,7 +30,7 @@ const loadNews = (newsId) => {
     .catch(error => console.log(error))
 }
 const loadNewsCards = (allNews) => {
-  // console.log(allNews.length)
+  // console.log(allNews)
   // items found 
   const itemsFound = allNews.length
   const itemsFoundSection = document.getElementById('items-found')
@@ -90,6 +90,7 @@ const modalData = (newsData) => {
   // console.log(newsData)
   const modalInfo = document.getElementById('modal-info')
   modalInfo.innerHTML = `
+  <p">Title : <strong>${newsData.title}</strong></p><hr>
   <p>Reporter : <strong>${newsData.author.name ? newsData.author.name : 'no name found'}</strong></p>
   <p>Rating : <strong>${newsData.rating.number}</strong></p>
   <p>Is Trending : <strong>${newsData.others_info.is_trending}</strong></p>
@@ -97,7 +98,6 @@ const modalData = (newsData) => {
   <p>Total Views : <strong>${newsData.total_view ? newsData.total_view : 'no views'}</strong></p>
   `
 }
-
 const loadingSpinner = isLoading => {
   const loaderSection = document.getElementById('loading-spinner');
   if(isLoading){
